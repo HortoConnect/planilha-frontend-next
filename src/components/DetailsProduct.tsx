@@ -85,7 +85,7 @@ const DetailsProduct = ({produto} : any) => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-4 text-gray-600">
+                  <div className="flex md:flex-row flex-col items-start  md:items-center md:space-x-4 text-gray-600">
                     <div className="flex items-center space-x-1">
                       <Package className="h-4 w-4" />
                       <span>Entrega em {fornecedor.tempoEntrega} horas</span>
@@ -96,10 +96,10 @@ const DetailsProduct = ({produto} : any) => {
                     </div>
                   </div>
                   
-                  <p className="text-gray-600">Volume disponível: {fornecedor.volumeDisponivel}kg</p>
+                  <p className="text-gray-600"><span className="font-bold">Volume disponível:</span> {fornecedor.volumeDisponivel}kg</p>
                 </div>
                 
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center justify-between space-x-4">
                   <div className="text-right">
                     <p className="text-sm text-gray-600">Preço por kg</p>
                     <p className="text-2xl font-bold text-green-600">
@@ -110,10 +110,10 @@ const DetailsProduct = ({produto} : any) => {
                     href="https://wa.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
+                    className="inline-flex items-center space-x-2 bg-green-500 text-white md:px-6 px-4 py-3 rounded-lg hover:bg-green-600 transition-colors"
                   >
                     <MessageCircle className="h-5 w-5" />
-                    <span>Contatar</span>
+                    <span>Chamar</span>
                   </a>
                 </div>
               </div>
