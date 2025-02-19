@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { MessageCircle, ArrowLeft, Star, Package, Scale } from 'lucide-react';
+import { MessageCircle, Star, Package, Scale } from 'lucide-react';
 
 const DetailsProduct = ({produto} : any) => {
 

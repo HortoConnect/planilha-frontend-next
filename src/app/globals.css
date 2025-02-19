@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base{
-    body{
+    /* body{
         @apply bg-green-50;
-    }
+    } */
   :root {
 
         --radius: 0.5rem

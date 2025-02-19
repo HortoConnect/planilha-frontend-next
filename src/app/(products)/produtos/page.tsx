@@ -1,9 +1,11 @@
 import React from "react";
 import SearchForm from "@/components/SearchForm";
-import produtosMock, {produtosMockRandom} from "../../../mock/products";
+import produtosMock, { produtosMockRandom } from "../../../mock/products";
 import Link from "next/link";
 import SearchFilter from "@/components/SearchFilter";
 import Favoritos from "@/components/Favoritos";
+import { Star, StarOff } from "lucide-react";
+import Favorito from "@/components/Favorito";
 
 export default async function page({
   searchParams,
@@ -31,17 +33,18 @@ export default async function page({
     return matchesSearch && matchesCategory && matchesSubcategory;
   });
 
-  
   return (
     <main>
       <div className="container mx-auto px-4 mt-10">
         {/* Hero Section */}
-        <div className="bg-green-600 rounded-2xl p-8 mb-8 text-white">
+        <div className="mb-2 text-white">
           <div className="flex items-center justify-between">
-          <h1 className="text-4xl font-bold mb-4">Horto Connect</h1>
-         <Favoritos query={query} />
+            <h1 className="text-4xl font-bold mb-4 md:text-6xl text-transparent bg-clip-text bg-gradient-to-t from-green-700 to-green-400">
+              Horto Connect
+            </h1>
+            <Favoritos query={query} />
           </div>
-          <p className="text-lg opacity-90">
+          <p className="text-lg font-semibold text-green-600">
             Encontre os melhores produtos frescos direto dos produtores
           </p>
         </div>
@@ -58,7 +61,13 @@ export default async function page({
               ? `Resultados de pesquisa para "${query}"`
               : "Todos os produtos disponíveis"}
           </p>
-          <ul className={filteredProducts.length > 0 ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" : "grid grid-cols-1"}>
+          <ul
+            className={
+              filteredProducts.length > 0
+                ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                : "grid grid-cols-1"
+            }
+          >
             {filteredProducts.length > 0 ? (
               filteredProducts.map((produto) => (
                 <Link
@@ -73,10 +82,14 @@ export default async function page({
                       className="w-full h-48 object-cover transition-transform duration-200"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-4 flex items-center justify-between">
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">
                       {produto.nome}
                     </h3>
+
+                    <div className="favorito-container">
+                      <Favorito />
+                    </div>
                   </div>
                 </Link>
               ))
@@ -84,7 +97,9 @@ export default async function page({
               <p className="text-normal text-base">
                 {query
                   ? `Nenhum produto encontrado para ${query} 😔`
-                  : `Nenhum produto encontrado para ${subcategory || category} 😔`}
+                  : `Nenhum produto encontrado para ${
+                      subcategory || category
+                    } 😔`}
               </p>
             )}
           </ul>
