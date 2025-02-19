@@ -3,6 +3,7 @@ import SearchForm from "@/components/SearchForm";
 import produtosMock, {produtosMockRandom} from "../../../mock/products";
 import Link from "next/link";
 import SearchFilter from "@/components/SearchFilter";
+import Favoritos from "@/components/Favoritos";
 
 export default async function page({
   searchParams,
@@ -30,12 +31,16 @@ export default async function page({
     return matchesSearch && matchesCategory && matchesSubcategory;
   });
 
+  
   return (
     <main>
       <div className="container mx-auto px-4 mt-10">
         {/* Hero Section */}
         <div className="bg-green-600 rounded-2xl p-8 mb-8 text-white">
+          <div className="flex items-center justify-between">
           <h1 className="text-4xl font-bold mb-4">Horto Connect</h1>
+         <Favoritos query={query} />
+          </div>
           <p className="text-lg opacity-90">
             Encontre os melhores produtos frescos direto dos produtores
           </p>
