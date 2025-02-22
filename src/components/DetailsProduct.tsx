@@ -17,7 +17,6 @@ const DetailsProduct = ({produto} : any) => {
     <>
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* Imagem do Produto */}
           <div className="relative h-[400px]">
             <img
               src={produto.imagem}
@@ -28,7 +27,6 @@ const DetailsProduct = ({produto} : any) => {
 
           {/* Detalhes e Filtros */}
           <div className="p-8 space-y-6">            
-            {/* Filtros */}
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -4,8 +4,9 @@ import produtosMock, { produtosMockRandom } from "../../../mock/products";
 import Link from "next/link";
 import SearchFilter from "@/components/SearchFilter";
 import Favoritos from "@/components/Favoritos";
-import { Star, StarOff } from "lucide-react";
 import Favorito from "@/components/Favorito";
+import Image from "next/image";
+import logo from "../../../assets/imgs/logo.png";
 
 export default async function page({
   searchParams,
@@ -39,9 +40,9 @@ export default async function page({
         {/* Hero Section */}
         <div className="mb-2 text-white">
           <div className="flex items-center justify-between">
-            <h1 className="text-4xl font-bold mb-4 md:text-6xl text-transparent bg-clip-text bg-gradient-to-t from-green-700 to-green-400">
-              Horto Connect
-            </h1>
+            <Link href="/produtos">
+              <Image src={logo} alt="Logo" className="w-[100px] h-auto" />
+            </Link>
             <Favoritos query={query} />
           </div>
           <p className="text-lg font-semibold text-green-600">

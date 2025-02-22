@@ -15,7 +15,7 @@ const SearchForm = ({ query }: { query?: string }) => {
           name="query"
           defaultValue={query}
           className="w-full h-full pl-4 outline-none placeholder-gray-500 text-base"
-          placeholder="Buscar produtos..."
+          placeholder="Buscar produto..."
         />
         <div className="flex gap-2">
           {query && <SearchFormReset />}
