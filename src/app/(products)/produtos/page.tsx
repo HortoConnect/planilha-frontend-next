@@ -3,9 +3,9 @@ import SearchForm from "@/components/SearchForm";
 import produtosMock, { produtosMockRandom } from "../../../mock/products";
 import Link from "next/link";
 import SearchFilter from "@/components/SearchFilter";
+import Image from "next/image";
 import Favoritos from "@/components/Favoritos";
 import Favorito from "@/components/Favorito";
-import Image from "next/image";
 import logo from "../../../assets/imgs/logo.png";
 
 export default async function page({
