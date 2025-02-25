@@ -43,7 +43,7 @@ export default async function page({
             <Link href="/produtos">
               <Image src={logo} alt="Logo" className="w-[100px] h-auto" />
             </Link>
-            <Favoritos query={query} />
+            <Favoritos />
           </div>
           <p className="text-lg font-semibold text-green-600">
             Encontre os melhores produtos frescos direto dos produtores
