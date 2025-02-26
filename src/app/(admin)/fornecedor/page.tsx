@@ -1,18 +1,11 @@
+import { Suspense } from 'react';
 import logo from "../../../assets/imgs/logo.png";
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../../../components/ui/card";
-
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card";
 import Image from "next/image";
 import SearchInput from "@/components/search-input";
 import OrdersTable from "@/components/orders-table";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="container mx-auto px-4 mt-10">
       <Card>
@@ -22,15 +15,20 @@ const page = () => {
           </CardTitle>
           <CardDescription>Listagem de fornecedores</CardDescription>
           <div className="flex pt-10 gap-4">
-            <SearchInput/>
+            {/* Adicione Suspense aqui */}
+            <Suspense fallback={<div>Carregando busca...</div>}>
+              <SearchInput/>
+            </Suspense>
           </div>
         </CardHeader>
         <CardContent>
-          <OrdersTable/>
+          <Suspense fallback={<div>Carregando tabela...</div>}>
+            <OrdersTable/>
+          </Suspense>
         </CardContent>
       </Card>
     </div>
   );
 };
 
-export default page;
+export default Page;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "next/navigation";
 import { ArrowLeft, X, Image as ImageIcon, ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -25,7 +25,7 @@ interface Product {
   price: string;
 }
 
-const FornecedorIdPage = () => {
+const page = () => {
   const params = useParams();
   const fornecedorId = params.id;
 
@@ -277,11 +277,4 @@ const FornecedorIdPage = () => {
   );
 };
 
-export default function FornecedorIdPageWithSuspense() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <FornecedorIdPage />
-    </Suspense>
-  );
-}
-
+export default page;
