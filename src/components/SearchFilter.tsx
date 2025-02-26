@@ -86,7 +86,7 @@ const SearchFilter = () => {
     <div className="flex flex-col w-full relative">
       <button
         onClick={() => setShowFilters(!showFilters)}
-        className="flex items-center justify-center space-x-2 px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors duration-200 self-start mb-2"
+        className="flex items-center justify-center space-x-2 px-6 py-3 bg-green-500 text-white rounded-md shadow-md hover:bg-green-700 transition-colors duration-200 self-start mb-2"
       >
         <Filter />
         <span>Filtros</span>

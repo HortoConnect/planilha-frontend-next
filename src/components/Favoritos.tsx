@@ -23,7 +23,7 @@ const Favoritos = ({ query }: { query?: string }) => {
             <nav>
               <ul className="flex flex-col p-4 text-gray-800">
                 <li className="text-xl py-4 flex items-center cursor-pointer">
-                  Aiai meu produto favorito
+                  Produtos favoritados aqui
                 </li>
               </ul>
             </nav>

@@ -107,9 +107,9 @@ const page = () => {
           <CardHeader className="px-7">
             <Link
               href="/fornecedor"
-              className="text-xs text-green-500 flex items-center gap-2 mb-5"
+              className="text-base text-green-500 flex items-center gap-2 mb-5"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="h-5 w-5" />
               Voltar a lista de fornecedores
             </Link>
             <CardTitle className="flex items-center justify-between">
